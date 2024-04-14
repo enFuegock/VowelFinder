@@ -5,15 +5,16 @@ w osobnej funkcji/metodzie, która będzie przyjmowała 1 argument wejściowy.
 Funkcja ta nie powinna wypisać niczego na ekran.
  */
 
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-        String[] vowels2 = {"a", "ą", "e", "ę", "i", "y", "o", "u", "ó"};
-        String string2 = "Dopóty dysk dane nosi, póki nie padnie. Jeden Celeron komputera nie czyni. Nie wywołuj przerwań z BIOS-u";
+    public static void VowelFinder(String sentence) {
+        String[] vowels = {"a", "ą", "e", "ę", "i", "y", "o", "u", "ó"};
         String founded = "";
-        for(int i = 0; i < string2.length(); i++) {
-            char eachLetterOfString = string2.charAt(i);
+        for (int i = 0; i < sentence.length(); i++) {
+            char eachLetterOfString = sentence.charAt(i);
             boolean found = false;
-            for (String vowel : vowels2) {
+            for (String vowel : vowels) {
                 if (vowel.charAt(0) == eachLetterOfString) {
                     found = true;
                     break;
@@ -23,8 +24,11 @@ public class Main {
                 founded += eachLetterOfString;
             }
         }
-        System.out.println(founded);
-        }
+        // System.out.println(founded);
     }
 
 
+    public static void main(String[] args) {
+        VowelFinder("Dopóty dysk dane nosi, póki nie padnie. Jeden Celeron komputera nie czyni. Nie wywołuj przerwań z BIOS-u");
+    }
+}
